@@ -83,7 +83,7 @@ WIIMOTE_CONVERT = { 1: cwiid.BTN_UP,
 # Extend XBMCClient with a method to directly send WiiMote button codes.
 def send_wiimote_button(self, code=0, map_name=WIIMOTE_MAP, queue=0, repeat=1):
     packet = PacketBUTTON(code=int(code), map_name=str(map_name), 
-                          queue=queue, repeat=repeat)
+                          queue=queue, repeat=repeat, amount=None)
     packet.send(self.sock, self.addr, self.uid)
 
 XBMCClient.send_wiimote_button = send_wiimote_button
